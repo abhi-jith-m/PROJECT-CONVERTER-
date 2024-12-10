@@ -1,10 +1,12 @@
 import streamlit as st
-from Assets.UnitConversion import Display
-from Assets.WeightConversion import Weight
-from Assets.SpeedConversion import Speed
-from Assets.TempConversion import Temp
-from Assets.TimeConversion import Time
-from Assets.CurrencyConversion import Currency
+from Assets import Display
+from Assets import Weight
+from Assets import Speed
+from Assets import Temp
+from Assets import Time
+from Assets import Currency
+from Assets import Volume
+from Assets import Number
 
 def home_page():
    
@@ -100,7 +102,7 @@ def home_page():
     """, unsafe_allow_html=True)
     
     col1,col2,col3,col4=st.columns([1,1,1,1])
-    col5,col6=st.columns([1,1])
+    col5,col6,col7,col8=st.columns([1,1,1,1])
     
     
     with col1:
@@ -164,11 +166,38 @@ def home_page():
         
         if st.button(f"CURRENCY", key="len5"):
             st.session_state["page"] = "Display_currency"
+            
+    with col7:
+        st.text("")
+        st.text("")
+        st.markdown("""
+          
+                <img src="https://i.postimg.cc/7Znv5Vbm/volume.png" class="weight-image">
+            
+        """, unsafe_allow_html=True)
+        
+        if st.button(f"VOLUME", key="len6"):
+            st.session_state["page"] = "Display_volume"
+    
+    with col8:
+        st.text("")
+        st.text("")
+        st.markdown("""
+          
+                <img src="https://i.postimg.cc/SKVJfC1G/file.png" class="weight-image">
+            
+        """, unsafe_allow_html=True)
+        
+        if st.button(f"NUMBER", key="len7"):
+            st.session_state["page"] = "Display_number"        
+           
+        
     
 def display_page():
     """Logic for the Display page."""
     
     st.subheader("LENGTH CONVERSION")
+    
     try:
         obj = Display.Display  
         obj.display()  
@@ -240,7 +269,31 @@ def display_currency():
     except Exception as e:
         st.error(f"Error in Display function: {e}")
     if st.button("Back"):
+        st.session_state["page"] = "App"  
+
+def display_volume():
+    
+    st.subheader("CURRENCY CONVERSION")
+    try:
+        obj = Volume.Display
+        obj.d_volume()
+        print("hii")
+    except Exception as e:
+        st.error(f"Error in Display function: {e}")
+    if st.button("Back"):
         st.session_state["page"] = "App"   
+
+def display_number():
+    
+    st.subheader("CURRENCY CONVERSION")
+    try:
+        obj = Number.Number
+        obj.d_number()
+        print("hii")
+    except Exception as e:
+        st.error(f"Error in Display function: {e}")
+    if st.button("Back"):
+        st.session_state["page"] = "App" 
 
 def main():
     
@@ -263,6 +316,10 @@ def main():
         display_time()
     elif page=="Display_currency":
         display_currency()
+    elif page=="Display_volume":
+        display_volume()
+    elif page=="Display_number":
+        display_number()
 
 
 if __name__ == "__main__":
