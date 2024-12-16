@@ -1,4 +1,5 @@
 import streamlit as st
+
 from Assets import Display
 from Assets import Weight
 from Assets import Speed
@@ -10,7 +11,6 @@ from Assets import Number
 
 def home_page():
    
-    
     st.markdown("""
         <style>
         .centered-image {
@@ -43,8 +43,6 @@ def home_page():
           
           }
           
-
-
 .stButton > button {
     
   appearance: button;
@@ -91,12 +89,7 @@ def home_page():
     font-size:15px;
     font-weight:600;
 }
-                        
-        
-        
-        
-        
-        
+                            
                     
         </style>
     """, unsafe_allow_html=True)
