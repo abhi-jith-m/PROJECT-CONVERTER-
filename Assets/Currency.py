@@ -81,8 +81,8 @@ class Currency:
     )
     print('hello')
     
-    value_in_meters = float(unit) * conversion_factors[option1]
-    result = value_in_meters / conversion_factors[option2]
+    value_in_meters = float(unit) / conversion_factors[option1]
+    result = value_in_meters * conversion_factors[option2]
     print(result)
     if unit and unit != '0' and option1 != option2:
           st.write(f'''
