@@ -201,7 +201,7 @@ def display_page():
 def display_weight():
    
     
-    st.subheader("LENGTH CONVERSION")
+    st.subheader("WEIGHT CONVERSION")
     try:
         obj = Weight.Weight  
         obj.display_weight()
@@ -214,7 +214,7 @@ def display_weight():
 def display_speed():
    
     
-    st.subheader("LENGTH CONVERSION")
+    st.subheader("SPEED CONVERSION")
     try:
         obj = Speed.Speed
         obj.dSpeed()
@@ -228,7 +228,7 @@ def display_speed():
 def display_temp():
    
     
-    st.subheader("LENGTH CONVERSION")
+    st.subheader("TEMP CONVERSION")
     try:
         obj = Temp.Temp
         obj.dTemp()
@@ -240,7 +240,7 @@ def display_temp():
 
 def display_time():
     
-    st.subheader("LENGTH CONVERSION")
+    st.subheader("TIME CONVERSION")
     try:
         obj = Time.Time
         obj.d_time()
@@ -265,7 +265,7 @@ def display_currency():
 
 def display_volume():
     
-    st.subheader("CURRENCY CONVERSION")
+    st.subheader("VOLUME CONVERSION")
     try:
         obj = Volume.Display
         obj.d_volume()
