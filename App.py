@@ -1,5 +1,4 @@
 import streamlit as st
-
 from Assets import Display
 from Assets import Weight
 from Assets import Speed
