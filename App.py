@@ -9,180 +9,130 @@ from Assets import Volume
 from Assets import Number
 
 def home_page():
-   
     st.markdown("""
         <style>
         .centered-image {
             display: block;
-         
-            width: 100px;  /* Adjust the width */
-            
-            
-            border-radius:12px;
-            display:flex;
-           
-         
+            width: 100px;
+            border-radius: 12px;
+            display: flex;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 1);
-            margin-bottom:10px;
-            
+            margin-bottom: 10px;
         }
         .weight-image {
             display: block;
-         
-            width: 100px;  /* Adjust the width */
-            height:100px;
-          
-            border-radius:12px;
-            display:flex;
-            
-           
-         
+            width: 100px;
+            height: 100px;
+            border-radius: 12px;
+            display: flex;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 1);
-            margin-bottom:10px;
-          
-          }
-          
-.stButton > button {
-    
-  appearance: button;
-  background-color: #1652F0;
-  border: 1px solid #1652F0;
-  border-radius: 4px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  width:100px;
-  line-height: 1.15;
-  overflow: visible;
-  margin-top:10px;
-
-  text-align: center;
-  text-transform: none;
-  transition: all 80ms ease-in-out;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  
-}
-
-.stButton > button:disabled {
-  opacity: .5;
-}
-
-.stButton > button:focus {
-  outline: 0;
-}
-.stButton > button:hover {
-  background-color: #0A46E4;
-  border-color: #0A46E4;
-  color:white;
-}
-
-.stButton > button:active {
-  background-color: #0039D7;
-  border-color: #0039D7;
-}
-
-.stButton > button p{
-    
-    font-size:15px;
-    font-weight:600;
-}
-                            
-                    
+            margin-bottom: 10px;
+        }
+        .stButton > button {
+            appearance: button;
+            background-color: #1652F0;
+            border: 1px solid #1652F0;
+            border-radius: 4px;
+            color: #FFFFFF;
+            cursor: pointer;
+            width: 100px;
+            line-height: 1.15;
+            margin-top: 10px;
+            text-align: center;
+            transition: all 80ms ease-in-out;
+        }
+        .stButton > button:disabled {
+            opacity: .5;
+        }
+        .stButton > button:focus {
+            outline: 0;
+        }
+        .stButton > button:hover {
+            background-color: #0A46E4;
+            border-color: #0A46E4;
+        }
+        .stButton > button:active {
+            background-color: #0039D7;
+            border-color: #0039D7;
+        }
         </style>
     """, unsafe_allow_html=True)
     
-    col1,col2,col3,col4=st.columns([1,1,1,1])
-    col5,col6,col7,col8=st.columns([1,1,1,1])
-    
+    col1, col2, col3, col4 = st.columns([1, 1, 1, 1])
+    col5, col6, col7, col8 = st.columns([1, 1, 1, 1])
     
     with col1:
-
         st.markdown("""
             <img src="https://i.postimg.cc/VNqT2m9m/ruler.png" class="centered-image">
         """, unsafe_allow_html=True)
-        
         if st.button("LENGTH", key="len"):
             st.session_state["page"] = "Display"
-            
-    with col2:
+            st.rerun()
 
+    with col2:
         st.markdown("""
-          
-                <img src="https://i.postimg.cc/XYfV1Ttv/Pngtree-pink-electronic-scale-4490130.png" class="weight-image">
-            
+            <img src="https://i.postimg.cc/XYfV1Ttv/Pngtree-pink-electronic-scale-4490130.png" class="weight-image">
         """, unsafe_allow_html=True)
-        
         if st.button("WEIGHT", key="len1"):
             st.session_state["page"] = "Display_weight"
+            st.rerun()
+
     with col3:
         st.markdown("""
-          
-                <img src="https://i.postimg.cc/2jTrPskc/vecteezy-speedometer-or-tachometer-with-arrow-infographic-gauge-9389587.png" class="weight-image">
-            
+            <img src="https://i.postimg.cc/2jTrPskc/vecteezy-speedometer-or-tachometer-with-arrow-infographic-gauge-9389587.png" class="weight-image">
         """, unsafe_allow_html=True)
-        
         if st.button("SPEED", key="len2"):
             st.session_state["page"] = "Display_speed"
+            st.rerun()
+
     with col4:
         st.markdown("""
-          
-                <img src="https://i.postimg.cc/Bng4TR8f/Pngtree-thermometer-icon-vector-icon-5249326.png" class="weight-image">
-            
+            <img src="https://i.postimg.cc/Bng4TR8f/Pngtree-thermometer-icon-vector-icon-5249326.png" class="weight-image">
         """, unsafe_allow_html=True)
-        
-        if st.button(f"TEMP", key="len3"):
+        if st.button("TEMP", key="len3"):
             st.session_state["page"] = "Display_temp"
-   
+            st.rerun()
+
     with col5:
         st.text("")
         st.text("")
         st.markdown("""
-          
-                <img src="https://i.postimg.cc/RVvhy37J/clock.png" class="weight-image">
-            
+            <img src="https://i.postimg.cc/RVvhy37J/clock.png" class="weight-image">
         """, unsafe_allow_html=True)
-        
-        if st.button(f"TIME", key="len4"):
+        if st.button("TIME", key="len4"):
             st.session_state["page"] = "Display_time"
-    
+            st.rerun()
+
     with col6:
         st.text("")
         st.text("")
         st.markdown("""
-          
-                <img src="https://i.postimg.cc/26WCJY95/currency-conversion.png" class="weight-image">
-            
+            <img src="https://i.postimg.cc/26WCJY95/currency-conversion.png" class="weight-image">
         """, unsafe_allow_html=True)
-        
-        if st.button(f"CURRENCY", key="len5"):
+        if st.button("CURRENCY", key="len5"):
             st.session_state["page"] = "Display_currency"
-            
+            st.rerun()
+
     with col7:
         st.text("")
         st.text("")
         st.markdown("""
-          
-                <img src="https://i.postimg.cc/7Znv5Vbm/volume.png" class="weight-image">
-            
+            <img src="https://i.postimg.cc/7Znv5Vbm/volume.png" class="weight-image">
         """, unsafe_allow_html=True)
-        
-        if st.button(f"VOLUME", key="len6"):
+        if st.button("VOLUME", key="len6"):
             st.session_state["page"] = "Display_volume"
-    
+            st.rerun()
+
     with col8:
         st.text("")
         st.text("")
         st.markdown("""
-          
-                <img src="https://i.postimg.cc/SKVJfC1G/file.png" class="weight-image">
-            
+            <img src="https://i.postimg.cc/SKVJfC1G/file.png" class="weight-image">
         """, unsafe_allow_html=True)
-        
-        if st.button(f"NUMBER", key="len7"):
-            st.session_state["page"] = "Display_number"        
-           
+        if st.button("NUMBER", key="len7"):
+            st.session_state["page"] = "Display_number"
+            st.rerun()
+
         
     
 def display_page():
@@ -197,6 +147,7 @@ def display_page():
         st.error(f"Error in Display function: {e}")
     if st.button("Back"):
         st.session_state["page"] = "App"
+        st.rerun()
         
 def display_weight():
    
@@ -209,7 +160,8 @@ def display_weight():
     except Exception as e:
         st.error(f"Error in Display function: {e}")
     if st.button("Back"):
-        st.session_state["page"] = "App"       
+        st.session_state["page"] = "App"
+        st.rerun()      
 
 def display_speed():
    
@@ -222,7 +174,8 @@ def display_speed():
     except Exception as e:
         st.error(f"Error in Display function: {e}")
     if st.button("Back"):
-        st.session_state["page"] = "App"     
+        st.session_state["page"] = "App"
+        st.rerun()     
         
 
 def display_temp():
@@ -236,7 +189,8 @@ def display_temp():
     except Exception as e:
         st.error(f"Error in Display function: {e}")
     if st.button("Back"):
-        st.session_state["page"] = "App"    
+        st.session_state["page"] = "App"
+        st.rerun()   
 
 def display_time():
     
@@ -248,7 +202,8 @@ def display_time():
     except Exception as e:
         st.error(f"Error in Display function: {e}")
     if st.button("Back"):
-        st.session_state["page"] = "App"    
+        st.session_state["page"] = "App"
+        st.rerun()   
 
 
 def display_currency():
@@ -261,7 +216,8 @@ def display_currency():
     except Exception as e:
         st.error(f"Error in Display function: {e}")
     if st.button("Back"):
-        st.session_state["page"] = "App"  
+        st.session_state["page"] = "App"
+        st.rerun()
 
 def display_volume():
     
@@ -273,7 +229,8 @@ def display_volume():
     except Exception as e:
         st.error(f"Error in Display function: {e}")
     if st.button("Back"):
-        st.session_state["page"] = "App"   
+        st.session_state["page"] = "App"
+        st.rerun()   
 
 def display_number():
     
@@ -285,7 +242,8 @@ def display_number():
     except Exception as e:
         st.error(f"Error in Display function: {e}")
     if st.button("Back"):
-        st.session_state["page"] = "App" 
+        st.session_state["page"] = "App"
+        st.rerun() 
 
 def main():
     
